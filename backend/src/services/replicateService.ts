@@ -5,7 +5,7 @@ import Replicate from 'replicate';
 export class ReplicateService {
   private replicate: Replicate;
 
-  constructor() {console.log("Replicate API Token:", process.env.REPLICATE_API_TOKEN);
+  constructor() {
     this.replicate = new Replicate({
       auth: process.env.REPLICATE_API_TOKEN,
     });
