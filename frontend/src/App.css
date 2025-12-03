@@ -14,7 +14,7 @@ body {
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f4a3b 100%);
   padding: 20px;
 }
 
@@ -41,6 +41,50 @@ body {
 .app-header p {
   font-size: 18px;
   opacity: 0.9;
+}
+
+/* Info banner styling */
+.info-banner {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #f59e0b;
+}
+
+.info-banner-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info-banner-content svg {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-banner-text {
+  flex: 1;
+}
+
+.info-banner-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.info-banner-text a {
+  color: #14b8a6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-banner-text a:hover {
+  text-decoration: underline;
 }
 
 .app-main {
@@ -92,7 +136,7 @@ body {
 }
 
 .input-group input[type="text"]:focus {
-  border-color: #667eea;
+  border-color: #14b8a6;
 }
 
 .input-group input[type="text"]:disabled {
@@ -116,13 +160,13 @@ body {
 }
 
 .style-card:hover:not(.disabled) {
-  border-color: #667eea;
+  border-color: #14b8a6;
   transform: translateY(-2px);
 }
 
 .style-card.selected {
-  border-color: #667eea;
-  background: #f3f4ff;
+  border-color: #14b8a6;
+  background: #f0fdfa;
 }
 
 .style-card.disabled {
@@ -213,7 +257,7 @@ body {
   padding: 8px 16px;
   border: 2px dashed #e5e7eb;
   background: white;
-  color: #667eea;
+  color: #14b8a6;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
@@ -223,7 +267,7 @@ body {
 .generate-btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -345,7 +389,7 @@ body {
 .download-btn {
   width: 100%;
   padding: 10px;
-  background: #667eea;
+  background: #14b8a6;
   color: white;
   border: none;
   border-radius: 6px;
@@ -360,7 +404,7 @@ body {
 }
 
 .download-btn:hover {
-  background: #5568d3;
+  background: #0f766e;
 }
 
 @media (max-width: 768px) {
