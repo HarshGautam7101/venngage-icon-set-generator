@@ -5,10 +5,9 @@ import Replicate from 'replicate';
 export class ReplicateService {
   private replicate: Replicate;
 
-  constructor() {
+  constructor() {console.log("Replicate API Token:", process.env.REPLICATE_API_TOKEN);
     this.replicate = new Replicate({
-      // Keep the token in the environment, not in source control
-      auth: 'r8_GhYzAuZpV8xJP2dNL83CYJUxyhAgyj93D4wbS',
+      auth: process.env.REPLICATE_API_TOKEN,
     });
   }
 
