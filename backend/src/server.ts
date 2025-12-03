@@ -10,9 +10,9 @@ const app: Express = express();
 const PORT = process.env.PORT;
 
 // Global middlewares
-app.use(cors());                  // Allow frontend to talk to backend
-app.use(express.json());          // Parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Parse form-like data
+app.use(cors());                  
+app.use(express.json());          
+app.use(express.urlencoded({ extended: true })); 
 
 // Small request logger so we know what's hitting the server
 app.use((req, res, next) => {

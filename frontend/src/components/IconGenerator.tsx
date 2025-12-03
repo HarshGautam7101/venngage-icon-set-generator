@@ -5,20 +5,29 @@ import { ColorPicker } from './ColorPicker';
 import { IconGrid } from './IconGrid';
 import { PRESET_STYLES } from '../types';
 
+/**
+ * IconGenerator component - Main UI for icon generation
+ * Manages user input, API communication, and generated icon display
+ */
 export const IconGenerator: React.FC = () => {
-  const [prompt, setPrompt] = useState('');
-  const [selectedStyle, setSelectedStyle] = useState('1');
-  const [colors, setColors] = useState(['#FF6B6B', '#4ECDC4', '#45B7D1']);
-  const [useColors, setUseColors] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [icons, setIcons] = useState<any[]>([]);
-  const [error, setError] = useState('');
-  const [apiHealthy, setApiHealthy] = useState(true);
+  // State management
+  const [prompt, setPrompt] = useState(''); // User's icon prompt
+  const [selectedStyle, setSelectedStyle] = useState('1'); // Selected icon style
+  const [colors, setColors] = useState(['#FF6B6B', '#4ECDC4', '#45B7D1']); // Brand colors
+  const [useColors, setUseColors] = useState(false); // Toggle to use custom colors
+  const [loading, setLoading] = useState(false); // Loading state during generation
+  const [icons, setIcons] = useState<any[]>([]); // Generated icons
+  const [error, setError] = useState(''); // Error messages
+  const [apiHealthy, setApiHealthy] = useState(true); // Backend API health status
 
+  // Check API health on component mount
   useEffect(() => {
     checkApiHealth();
   }, []);
 
+  /**
+   * Verify backend API is available
+   */
   const checkApiHealth = async () => {
     const healthy = await ApiService.healthCheck();
     setApiHealthy(healthy);
@@ -27,22 +36,30 @@ export const IconGenerator: React.FC = () => {
     }
   };
 
+  /**
+   * Handle icon generation request
+   * Validates input, calls API, and updates state with results
+   */
   const handleGenerate = async () => {
+    // Validate prompt input
     if (!prompt.trim()) {
       setError('Please enter a prompt');
       return;
     }
 
+    // Validate API availability
     if (!apiHealthy) {
       setError('Backend server is not available. Please start the server first.');
       return;
     }
 
+    // Reset state for new generation
     setLoading(true);
     setError('');
     setIcons([]);
 
     try {
+      // Call API with generation parameters
       const generatedIcons = await ApiService.generateIcons({
         prompt: prompt.trim(),
         styleId: selectedStyle,
