@@ -64,12 +64,6 @@ export const IconGenerator: React.FC = () => {
 
   return (
     <div className="icon-generator">
-      {!apiHealthy && (
-        <div className="warning-banner">
-          <AlertCircle size={20} />
-          <span>Backend server is offline. Please start it with: cd backend && npm run dev</span>
-        </div>
-      )}
 
       <div className="generator-card">
         <div className="input-group">

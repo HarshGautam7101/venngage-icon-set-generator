@@ -55,6 +55,7 @@ export class ApiService {
   static async healthCheck(): Promise<boolean> {
     try {
       const response = await axios.get(`${API_BASE_URL}/icons/health`);
+      console.log("Health check response:", response.data);
       return response.data.status === 'ok';
     } catch (error) {
       return false;
