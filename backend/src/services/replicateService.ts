@@ -37,7 +37,6 @@ export class ReplicateService {
       if (Array.isArray(output) && output.length > 0) {
         // Handle both plain string URLs and objects with a .url() helper.
         const url = typeof output[0] === 'string' ? output[0] : output[0].url();
-        console.log(`Icon generated successfully: ${url}`);
         return url;
       }
 
