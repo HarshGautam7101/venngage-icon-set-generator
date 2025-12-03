@@ -15,6 +15,13 @@ The frontend talks only to the backend; the backend calls Replicate's **FLUX Sch
 - `backend/` – Express API that validates requests, builds prompts and calls Replicate.
 - `frontend/` – React UI for entering prompts, picking styles/colors and downloading icons.
 
+### Watch the Demo 🎬
+
+**Duration:** ~5 minutes  
+Watch a short walkthrough demonstrating the UI, the generation flow, and the download features. 
+
+https://www.loom.com/share/ca1d11c33b7a4d61ba2e96ad0b41a122
+
 ## Prerequisites
 
 - Node.js 18+ (recommended)
